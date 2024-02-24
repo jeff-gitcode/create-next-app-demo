@@ -18,6 +18,17 @@ $ yarn create jest@latest
 # storybook
 $ npx storybook@latest init
 
+# playwright
+$ yarn create playwright
+
+Getting started with writing end-to-end tests with Playwright:
+Initializing project in '.'
+√ Where to put your end-to-end tests? · e2e
+√ Add a GitHub Actions workflow? (y/N) · true
+√ Install Playwright browsers (can be done manually via 'yarn playwright install')? (Y/n) · true
+
+$ yarn playwright
+
 ## Benefits of Docker Compose
 
 - Develop locally without Node.js or TypeScript installed ✨
