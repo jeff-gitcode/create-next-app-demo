@@ -2,6 +2,22 @@
 
 This example contains everything needed to get a Next.js development and production environment up and running with Docker Compose.
 
+
+```typescript
+# create next app with docker compose
+$ npx create-next-app@latest --example with-docker-compose create-next-app-demo
+
+#docker
+$ docker-compose up
+http://localhost:3000
+
+# jest
+$ yarn add -D jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
+$ yarn create jest@latest
+
+# storybook
+$ npx storybook@latest init
+
 ## Benefits of Docker Compose
 
 - Develop locally without Node.js or TypeScript installed ✨
