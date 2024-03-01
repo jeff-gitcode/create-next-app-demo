@@ -16,6 +16,7 @@ const User = ({ user }) => {
 }
 
 export async function getServerSideProps({ params }) {
+  debugger;
   console.log(params);
   const response = await fetch(
     `https://jsonplaceholder.typicode.com/users/${params.id}`,

@@ -1,10 +1,19 @@
 import Link from 'next/link';
 import React from 'react';
+import styled from 'styled-components';
+import { GETLIST } from '../api/user/route';
+
+const Title = styled.h1`
+  font-size: 50px;
+  color: white;
+  background-color: green;
+  text-align: left;
+`;
 
 const Users = ({ users }) => {
   return (
-    <div>
-      <h1>Users</h1>
+    <>
+      <Title>Users</Title>
       {users.map((user) => (
         <Link
           href={`/user/${user.id}`}
@@ -12,13 +21,14 @@ const Users = ({ users }) => {
           <li key={user.id}>        {user.id}
             |          {user.name}</li>
         </Link>))}
-    </div>
+    </>
   );
 };
 
 export async function getServerSideProps() {
   // Fetch data from jsonplaceholder API 
-  const response = await fetch('https://jsonplaceholder.typicode.com/users');
+  const response = await fetch(`${process.env.PATH_URL_BACKEND}/users`);
+
   const users = await response.json();
 
   return {
