@@ -18,6 +18,9 @@ $ yarn create jest@latest
 # storybook
 $ npx storybook@latest init
 
+#swr
+$ yarn add swr
+
 # playwright
 $ yarn create playwright
 

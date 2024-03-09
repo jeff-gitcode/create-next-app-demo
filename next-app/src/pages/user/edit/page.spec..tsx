@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 
 import { mockUser } from "./page.mocks";
-import User from "./page";
+import User from "../page";
 
 describe('User', () => {
     it('should render successfully', () => {

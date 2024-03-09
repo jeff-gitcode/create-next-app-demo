@@ -29,6 +29,7 @@ const Header = () => {
       <NavLinks>
         <NavLink href="/">Home</NavLink>
         <NavLink href="/user/users">Users</NavLink>
+        <NavLink href="/user/post/page">Post</NavLink>
       </NavLinks>
       {/* <header
         className={`fixed w-full left-0 top-0 bg-blue-500 text-white py-6 px-10 flex items-center justify-between`}

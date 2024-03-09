@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
-import { GETLIST } from '../api/user/route';
 
 const Title = styled.h1`
   font-size: 50px;
@@ -16,7 +15,7 @@ const Users = ({ users }) => {
       <Title>Users</Title>
       {users.map((user) => (
         <Link
-          href={`/user/${user.id}`}
+          href={`/user/edit/${user.id}`}
           key={user.id}>
           <li key={user.id}>        {user.id}
             |          {user.name}</li>
