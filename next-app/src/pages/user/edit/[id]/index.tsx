@@ -11,8 +11,8 @@ export default function Page() {
   const { id } = router.query;
   console.log(id);
   const { data, error, isLoading } = useSWR<any>(`/api/hello/`, fetcher);
+  // const { data, error, isLoading } = useSWR<any>(`/api/user/1`, fetcher);
   console.log(data);  
-  // const { data, error, isLoading } = useSWR<any>(`/api/user/`, fetcher);
   return (
     <div className="w-full flex flex-col text-4xl justify-center my-0 mx-auto bg-red-300  ">
       <h1>

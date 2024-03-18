@@ -1,0 +1,62 @@
+@host = http://localhost:3000/api
+
+#####
+GET {{host}}/user/1 HTTP/1.1
+content-type: application/json
+
+#####
+GET {{host}}/user HTTP/1.1
+content-type: application/json
+
+#####
+POST {{host}}/user HTTP/1.1
+content-type: application/json
+
+{
+    "title": "foo",
+    "body": "bar",
+    "userId": 1,
+}
+
+#####
+PUT {{host}}/user/1 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "foo",
+    "body": "bar",
+    "userId": 1,
+}
+
+###########
+DELETE {{host}}/user/1 HTTP/1.1
+content-type: application/json
+
+##### json placeholder
+GET https://jsonplaceholder.typicode.com/users/1 HTTP/1.1
+content-type: application/json
+
+#####
+POST https://jsonplaceholder.typicode.com/users HTTP/1.1
+
+content-type: application/json
+{
+    "title": "foo",
+    "body": "bar",
+    "userId": 1,
+}
+
+#####
+PUT https://jsonplaceholder.typicode.com/users/1 HTTP/1.1
+
+content-type: application/json
+{
+    "title": "foo",
+    "body": "bar",
+    "userId": 1,
+}
+
+### DELETE USER
+# @name DeleteUser
+DELETE https://jsonplaceholder.typicode.com/users/1 HTTP/1.1
+content-type: application/json
