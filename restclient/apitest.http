@@ -1,31 +1,32 @@
 @host = http://localhost:3000/api
+@contentType = application/json
 
 #####
 GET {{host}}/user/1 HTTP/1.1
-content-type: application/json
+Content-Type: {{contentType}}
 
 #####
 GET {{host}}/user HTTP/1.1
-content-type: application/json
+Content-Type: {{contentType}}
 
 #####
 POST {{host}}/user HTTP/1.1
-content-type: application/json
+Content-Type: {{contentType}}
 
 {
     "title": "foo",
     "body": "bar",
-    "userId": 1,
+    "userId": 1
 }
 
 #####
 PUT {{host}}/user/1 HTTP/1.1
-content-type: application/json
+Content-Type: {{contentType}}
 
 {
     "title": "foo",
     "body": "bar",
-    "userId": 1,
+    "userId": 1
 }
 
 ###########
@@ -43,7 +44,7 @@ content-type: application/json
 {
     "title": "foo",
     "body": "bar",
-    "userId": 1,
+    "userId": 1
 }
 
 #####
@@ -53,7 +54,7 @@ content-type: application/json
 {
     "title": "foo",
     "body": "bar",
-    "userId": 1,
+    "userId": 1
 }
 
 ### DELETE USER

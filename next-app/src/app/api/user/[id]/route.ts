@@ -17,20 +17,22 @@ export async function GET(req: NextApiRequest, res: NextApiResponse) {
     return NextResponse.json({ result })
 }
 
-export async function PUT(req: NextApiRequest, res: NextApiResponse) {
+export async function PUT(req: Request, res: NextApiResponse) {
     const { id } = res.params;
-    debugger;
+    // const requestHeaders = new Headers(req.headers);
+    const body = await req.json();
+    console.log(body);
     // const body = await req.body()
-    // const res = await fetch(process.env.PATH_URL_BACKEND + `/users/${params.id}`, {
-    //     method: 'PUT',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(body),
-    // })
-    // const data = await res.json();
-    // return NextResponse.json(data)
-    return NextResponse.json({ result: req });
+    const result = await fetch(process.env.PATH_URL_BACKEND + `/users/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+    })
+
+    const data = await result.json();
+    return NextResponse.json(data);
 }
 
 export async function DELETE(req: NextRequest, res: NextApiResponse) {
