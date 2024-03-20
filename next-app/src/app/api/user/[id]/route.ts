@@ -1,11 +1,10 @@
 'use server';
 
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { useRouter } from 'next/navigation';
 import { NextRequest, NextResponse } from 'next/server';
 
 
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+export async function GET(req: Request, res: NextApiResponse) {
     const { id } = res.params;
 
     const res1 = await fetch(process.env.PATH_URL_BACKEND + `/users/${id}`, {
