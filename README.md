@@ -2,7 +2,6 @@
 
 This example contains everything needed to get a Next.js development and production environment up and running with Docker Compose.
 
-
 ```typescript
 # create next app with docker compose
 $ npx create-next-app@latest --example with-docker-compose create-next-app-demo
@@ -31,6 +30,10 @@ Initializing project in '.'
 √ Install Playwright browsers (can be done manually via 'yarn playwright install')? (Y/n) · true
 
 $ yarn playwright
+
+# test
+$ yarn add node-mocks-http --dev
+$ yarn add -D fetch-mock
 
 ## Benefits of Docker Compose
 

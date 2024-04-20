@@ -29,7 +29,7 @@ Content-Type: {{contentType}}
     "userId": 1
 }
 
-###########
+########### delete user
 DELETE {{host}}/user/1 HTTP/1.1
 content-type: application/json
 
@@ -37,7 +37,7 @@ content-type: application/json
 GET https://jsonplaceholder.typicode.com/users/1 HTTP/1.1
 content-type: application/json
 
-#####
+##### insert
 POST https://jsonplaceholder.typicode.com/users HTTP/1.1
 
 content-type: application/json
@@ -47,7 +47,7 @@ content-type: application/json
     "userId": 1
 }
 
-#####
+##### update
 PUT https://jsonplaceholder.typicode.com/users/1 HTTP/1.1
 
 content-type: application/json
