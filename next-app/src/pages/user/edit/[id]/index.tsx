@@ -11,7 +11,7 @@ export default function Page() {
   const { id } = router.query;
   console.log(id);
 
-  const { data, error, isLoading } = useUser(id);
+  const { data, error, isLoading } = useUser(id as string);
 
   if (error) return <div>failed to load</div>
   if (isLoading) return <div>loading...</div>
