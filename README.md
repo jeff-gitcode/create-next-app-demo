@@ -34,6 +34,7 @@ $ yarn playwright
 # test
 $ yarn add node-mocks-http --dev
 $ yarn add -D fetch-mock
+$ yarn add -D nock
 
 ## Benefits of Docker Compose
 

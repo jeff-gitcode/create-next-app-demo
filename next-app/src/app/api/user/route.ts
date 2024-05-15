@@ -7,8 +7,9 @@ export async function GET() {
     headers: {
       'Content-Type': 'application/json',
     },
-  })
-  const result = await res1.json();
+  });
+  const result = await res1?.json();
+  console.log(result);
   return NextResponse.json({ result })
 };
 
@@ -21,6 +22,6 @@ export async function POST(req: NextRequest, res: NextApiResponse) {
     },
     body: JSON.stringify(body),
   })
-  const data = await res1.json();
+  const data = await res1?.json();
   return NextResponse.json(data)
 };
