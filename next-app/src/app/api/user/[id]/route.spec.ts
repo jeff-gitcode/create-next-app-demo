@@ -23,7 +23,7 @@ describe("/api/user", () => {
     };
   });
 
-  test("returns a list of users", async () => {
+  test("returns a user", async () => {
     const {req, res} = createMocks({
       method: "GET",
       url: "/users/1",
@@ -113,4 +113,45 @@ describe("/api/user", () => {
     // expect(result.result).toEqual(users);
   });
 
+  test("update user", async () => {
+    const {req, res} = createMocks({
+      method: "PUT",
+      url: "/users/1",
+    });
+
+    var url = process.env.PATH_URL_BACKEND + '/users/1';
+    var user = 
+      { id: 1, name: "Alice" };
+
+    fetchMock.put(url, user);
+
+    httpMocks.createResponse();
+    const res1 = {...res, params: {id: 1}};
+    const response = await GET(req, res1);
+    const result = await response.json();
+
+    expect(response.status).toBe(200);
+    expect(result.result).toEqual(user);
+  });
+
+  test("delete user", async () => {
+    const {req, res} = createMocks({
+      method: "PUT",
+      url: "/users/1",
+    });
+
+    var url = process.env.PATH_URL_BACKEND + '/users/1';
+    var user = 
+      { id: 1, name: "Alice" };
+
+    fetchMock.delete(url, user);
+
+    httpMocks.createResponse();
+    const res1 = {...res, params: {id: 1}};
+    const response = await GET(req, res1);
+    const result = await response.json();
+
+    expect(response.status).toBe(200);
+    expect(result.result).toEqual(user);
+  });
 });
