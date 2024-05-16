@@ -42,8 +42,9 @@ export async function DELETE(req: NextRequest, res: NextApiResponse) {
         headers: {
             'Content-Type': 'application/json',
         },
-    })
-    const result = await res1.json()
+    });
+
+    const result = await res1.json();
     return NextResponse.json({ result })
 
 }

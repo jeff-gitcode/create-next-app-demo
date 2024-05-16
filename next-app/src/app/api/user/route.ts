@@ -13,8 +13,8 @@ export async function GET() {
   return NextResponse.json({ result })
 };
 
-export async function POST(req: NextRequest, res: NextApiResponse) {
-  const body = await req.json()
+export async function POST(req: NextRequest) {
+  const body = req.body;
   const res1 = await fetch(process.env.PATH_URL_BACKEND + '/users', {
     method: 'POST',
     headers: {

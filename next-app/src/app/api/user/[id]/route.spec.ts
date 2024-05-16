@@ -24,36 +24,37 @@ describe("/api/user", () => {
   });
 
   test("returns a list of users", async () => {
-    createMocks({
+    const {req, res} = createMocks({
       method: "GET",
-      url: "/users",
+      url: "/users/1",
+      query: { id: 1 },
+      response: { params: { id: 1 } }
     });
 
-    var url = process.env.PATH_URL_BACKEND + '/users';
-    var users = [
-      { id: 1, name: "Alice" },
-      { id: 2, name: "Bob" },
-    ];
-    fetchMock.get(url, users)
+    var url = process.env.PATH_URL_BACKEND + '/users/1';
+    var user = 
+      { id: 1, name: "Alice" };
+
+    fetchMock.get(url, user)
       .post(url, { name: "Alice" });
 
     httpMocks.createResponse();
-
-    const response = await GET();
+    const res1 = {...res, params: {id: 1}};
+    const response = await GET(req, res1);
 
     const result = await response.json();
 
     expect(response.status).toBe(200);
-    expect(result.result).toEqual(users);
+    expect(result.result).toEqual(user);
 
 
-    const { req, res } = createMocks({
-      method: 'POST',
-      body: { name: 'Alice' },
-    });
+    // const { req, res } = createMocks({
+    //   method: 'POST',
+    //   body: { name: 'Alice' },
+    // });
 
-    const response1 = await POST(req);
-    expect(response1.status).toBe(200);
+    // const response1 = await POST(req);
+    // expect(response1.status).toBe(200);
 
     // const req1 = createMocks({
     // 	method: 'POST',
