@@ -5,11 +5,8 @@
 // import { createMocks, httpMocks } from "node-mocks-http";
 const httpMocks = require('node-mocks-http');
 const fetchMock = require('fetch-mock-jest');
-import nock from "nock";
 
-import { NextApiResponse } from "next";
-import { GET, POST } from "./route";
-import { mockUser } from "./route.mocks";
+import { GET } from "./route";
 import { createMocks } from "node-mocks-http";
 // import fetchMock from "fetch-mock";
 
